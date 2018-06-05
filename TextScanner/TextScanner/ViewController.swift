@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBAction func addReceipt(_ sender: Any) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +23,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
