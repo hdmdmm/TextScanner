@@ -2,3 +2,4 @@
 *.xcuserstate
 TextScanner/TextScanner.xcworkspace
 xcschememanagement.plist
+TextScanner/Pods
