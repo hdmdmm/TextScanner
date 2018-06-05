@@ -13,9 +13,18 @@
 		9745E31120C71DFB000A283E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9745E31020C71DFB000A283E /* Assets.xcassets */; };
 		9745E31420C71DFB000A283E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9745E31220C71DFB000A283E /* LaunchScreen.storyboard */; };
 		9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */; };
+		9745E32020C727A4000A283E /* UIViewController-Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E31F20C727A4000A283E /* UIViewController-Message.swift */; };
+		9745E32220C728D2000A283E /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32120C728D2000A283E /* ActivityView.swift */; };
+		9745E32520C72910000A283E /* Rect-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32320C7290F000A283E /* Rect-extension.swift */; };
+		9745E32620C72910000A283E /* View-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32420C72910000A283E /* View-Layout.swift */; };
+		9745E32920C72A6E000A283E /* RecognizedBlockMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32720C72A6E000A283E /* RecognizedBlockMarkerView.swift */; };
+		9745E32A20C72A6E000A283E /* RecognizedBlockMarkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32820C72A6E000A283E /* RecognizedBlockMarkerModel.swift */; };
+		C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A9E4CEFF2DFD26378319C3C /* Pods-TextScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextScanner/Pods-TextScanner.release.xcconfig"; sourceTree = "<group>"; };
+		9037B8E7FE71C3414CB79D84 /* Pods-TextScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextScanner/Pods-TextScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		9745E30620C71DFA000A283E /* TextScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9745E30920C71DFA000A283E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9745E30B20C71DFA000A283E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,13 @@
 		9745E31320C71DFB000A283E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9745E31520C71DFB000A283E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptRecognizer.swift"; sourceTree = "<group>"; };
+		9745E31F20C727A4000A283E /* UIViewController-Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Message.swift"; sourceTree = "<group>"; };
+		9745E32120C728D2000A283E /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		9745E32320C7290F000A283E /* Rect-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rect-extension.swift"; sourceTree = "<group>"; };
+		9745E32420C72910000A283E /* View-Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View-Layout.swift"; sourceTree = "<group>"; };
+		9745E32720C72A6E000A283E /* RecognizedBlockMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizedBlockMarkerView.swift; sourceTree = "<group>"; };
+		9745E32820C72A6E000A283E /* RecognizedBlockMarkerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizedBlockMarkerModel.swift; sourceTree = "<group>"; };
+		B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8698A5FCA091295389CE143B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9037B8E7FE71C3414CB79D84 /* Pods-TextScanner.debug.xcconfig */,
+				7A9E4CEFF2DFD26378319C3C /* Pods-TextScanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9745E2FD20C71DFA000A283E = {
 			isa = PBXGroup;
 			children = (
 				9745E30820C71DFA000A283E /* TextScanner */,
 				9745E30720C71DFA000A283E /* Products */,
+				8698A5FCA091295389CE143B /* Pods */,
+				9F2D8FAFA641628ABD192E97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +84,7 @@
 		9745E30820C71DFA000A283E /* TextScanner */ = {
 			isa = PBXGroup;
 			children = (
+				9745E31E20C724C4000A283E /* Helpers */,
 				9745E31B20C721A1000A283E /* OCR */,
 				9745E30920C71DFA000A283E /* AppDelegate.swift */,
 				9745E30B20C71DFA000A283E /* ViewController.swift */,
@@ -70,9 +99,30 @@
 		9745E31B20C721A1000A283E /* OCR */ = {
 			isa = PBXGroup;
 			children = (
+				9745E32820C72A6E000A283E /* RecognizedBlockMarkerModel.swift */,
+				9745E32720C72A6E000A283E /* RecognizedBlockMarkerView.swift */,
 				9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */,
 			);
 			path = OCR;
+			sourceTree = "<group>";
+		};
+		9745E31E20C724C4000A283E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9745E32320C7290F000A283E /* Rect-extension.swift */,
+				9745E32420C72910000A283E /* View-Layout.swift */,
+				9745E32120C728D2000A283E /* ActivityView.swift */,
+				9745E31F20C727A4000A283E /* UIViewController-Message.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9F2D8FAFA641628ABD192E97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9745E31820C71DFB000A283E /* Build configuration list for PBXNativeTarget "TextScanner" */;
 			buildPhases = (
+				2513BE7F5C946785F4FDC608 /* [CP] Check Pods Manifest.lock */,
 				9745E30220C71DFA000A283E /* Sources */,
 				9745E30320C71DFA000A283E /* Frameworks */,
 				9745E30420C71DFA000A283E /* Resources */,
+				9577B687167A6C8107F99534 /* [CP] Embed Pods Frameworks */,
+				921B0972A4112AEC653836C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,14 +194,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2513BE7F5C946785F4FDC608 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextScanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		921B0972A4112AEC653836C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TextScanner/Pods-TextScanner-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextScanner/Pods-TextScanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9577B687167A6C8107F99534 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TextScanner/Pods-TextScanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextScanner/Pods-TextScanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9745E30220C71DFA000A283E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9745E32020C727A4000A283E /* UIViewController-Message.swift in Sources */,
 				9745E30C20C71DFA000A283E /* ViewController.swift in Sources */,
+				9745E32A20C72A6E000A283E /* RecognizedBlockMarkerModel.swift in Sources */,
 				9745E30A20C71DFA000A283E /* AppDelegate.swift in Sources */,
+				9745E32520C72910000A283E /* Rect-extension.swift in Sources */,
+				9745E32920C72A6E000A283E /* RecognizedBlockMarkerView.swift in Sources */,
+				9745E32220C728D2000A283E /* ActivityView.swift in Sources */,
 				9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */,
+				9745E32620C72910000A283E /* View-Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +410,13 @@
 		};
 		9745E31920C71DFB000A283E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9037B8E7FE71C3414CB79D84 /* Pods-TextScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VQ48U3YP6;
 				INFOPLIST_FILE = TextScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,11 +430,13 @@
 		};
 		9745E31A20C71DFB000A283E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A9E4CEFF2DFD26378319C3C /* Pods-TextScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VQ48U3YP6;
 				INFOPLIST_FILE = TextScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
