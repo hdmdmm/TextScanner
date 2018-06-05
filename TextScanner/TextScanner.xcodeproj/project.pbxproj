@@ -12,6 +12,7 @@
 		9745E30F20C71DFA000A283E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9745E30D20C71DFA000A283E /* Main.storyboard */; };
 		9745E31120C71DFB000A283E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9745E31020C71DFB000A283E /* Assets.xcassets */; };
 		9745E31420C71DFB000A283E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9745E31220C71DFB000A283E /* LaunchScreen.storyboard */; };
+		9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9745E31020C71DFB000A283E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9745E31320C71DFB000A283E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9745E31520C71DFB000A283E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptRecognizer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		9745E30820C71DFA000A283E /* TextScanner */ = {
 			isa = PBXGroup;
 			children = (
+				9745E31B20C721A1000A283E /* OCR */,
 				9745E30920C71DFA000A283E /* AppDelegate.swift */,
 				9745E30B20C71DFA000A283E /* ViewController.swift */,
 				9745E30D20C71DFA000A283E /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				9745E31520C71DFB000A283E /* Info.plist */,
 			);
 			path = TextScanner;
+			sourceTree = "<group>";
+		};
+		9745E31B20C721A1000A283E /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */,
+			);
+			path = OCR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			files = (
 				9745E30C20C71DFA000A283E /* ViewController.swift in Sources */,
 				9745E30A20C71DFA000A283E /* AppDelegate.swift in Sources */,
+				9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

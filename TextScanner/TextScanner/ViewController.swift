@@ -9,9 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView?
     
     @IBAction func addReceipt(_ sender: Any) {
+        startScanning()
     }
 
     override func viewDidLoad() {
@@ -25,3 +26,5 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: ReceiptRecognizer {
+}
