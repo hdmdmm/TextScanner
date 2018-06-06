@@ -76,12 +76,20 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
     private func googleOCR(_ image: UIImage) -> [RecognizedBlockMarkerModel] {
         var blocks = [RecognizedBlockMarkerModel]()
         textDetector.features(in: image, options: [:]).forEach { feature in
-            guard let textBlock = feature as? GMVTextBlockFeature else {
+            guard let textBlock = feature as? GMVTextBlockFeature,
+                let models = blockIntoLines(textBlock) else {
                 return
             }
-            blocks.append(RecognizedBlockMarkerModel(bounds: textBlock.bounds, value: textBlock.value!))
+            blocks.append(contentsOf: models)
         }
         return blocks
+    }
+    
+    private func blockIntoLines(_ block: GMVTextBlockFeature) -> [RecognizedBlockMarkerModel]?  {
+        let models = block.lines.compactMap { textLine in
+            return RecognizedBlockMarkerModel(bounds: textLine.bounds, value: textLine.value)
+        }
+        return models
     }
     
     //

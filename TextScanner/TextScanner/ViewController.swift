@@ -37,6 +37,6 @@ extension ViewController: RecognizedMarkerHandlerEvent {
     }
 }
 
-extension ViewController: ReceiptRecognizer {}
+extension ViewController: ReceiptRecognizer{}
 extension ViewController: Message{}
 extension ViewController: ActivityProgress{}
