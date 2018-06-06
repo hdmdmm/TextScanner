@@ -125,11 +125,11 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
                 return CGRect.zero
         }
         let imageViewSize = imageView.frame.size
-        
+
         let scaleWidth = imageViewSize.width / imageSize.width
         let scaleHeight = imageViewSize.height / imageSize.height
         let aspect = fmin(scaleWidth, scaleHeight)
-        
+
         var imageRect = CGRect(x: 0,
                                y: 0,
                                width: imageSize.width * aspect,
@@ -137,45 +137,17 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
         // Center image
         imageRect.origin.x = (imageViewSize.width - imageRect.size.width) / 2
         imageRect.origin.y = (imageViewSize.height - imageRect.size.height) / 2
-        
+
         // Add imageView offset
         imageRect.origin.x += imageView.frame.origin.x// + origin.x
         imageRect.origin.y += imageView.frame.origin.y// + origin.y
-        
         return imageRect
     }
 }
 
 extension ViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        
-    }
-    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//        print(markersView?.frame)
-//        guard let markersView = markersView,
-//            let imageView = imageView else {
-//            return
-//        }
-//        imageView.frame = markersView.frame
-        
-//        print(markersView.frame)
-//        //        markersView.frame = markersView.frame.multiply(scrollView.zoomScale + 1.0)
-//        markersView.subviews.forEach {
-//            guard let model = ($0 as? RecognizedBlockMarkerView)?.model else {
-//                print("ups, looks like we lost the model of view.")
-//                return
-//            }
-//            print(scrollView.zoomScale)
-//            print(model.bounds)
-//            let bounds = model.bounds.multiply(scrollView.zoomScale + 1.0)
-//            print(bounds)
-//            $0.frame = bounds
-//        }
     }
 
     fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
@@ -183,12 +155,10 @@ extension ViewController: UIScrollViewDelegate {
         let widthScale = imageSize.width / size.width
         let heightScale = imageSize.height / size.height
         let maxScale = max(widthScale, heightScale)
-
         scrollView?.minimumZoomScale = 1.0
         scrollView?.maximumZoomScale = maxScale
         scrollView?.zoomScale = 1.0
     }
-
 }
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -221,17 +191,3 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         dismiss(animated: true, completion: nil)
     }
 }
-
-//extension UIImageView {
-//    func visibleImage() -> UIImage? {
-//        UIGraphicsBeginImageContext(self.frame.size)
-//        guard let context = UIGraphicsGetCurrentContext() else {
-//            return nil
-//        }
-//        context.rotate(by: CGFloat(2 * Double.pi))
-//        layer.render(in: context)
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return image
-//    }
-//}
