@@ -16,11 +16,9 @@ class RecognizedBlockMarkerView: UIView {
     var delegate: RecognizedMarkerHandlerEvent? = nil
     var model: RecognizedBlockMarkerModel? = nil
     
-    convenience init(frame: CGRect, coefficient: CGFloat) {
-        let frame = frame.multiply(coefficient)
+    convenience init(_ frame: CGRect) {
         self.init(frame: frame)
         self.backgroundColor = UIColor.green.withAlphaComponent(0.3)
-        
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped(recognizer:))))
     }
     
