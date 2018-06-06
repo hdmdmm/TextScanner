@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileVision
 
-@objc protocol ReceiptRecognizer {
+protocol ReceiptRecognizer {
     var imageView: UIImageView? {get set}
 }
 
@@ -131,20 +131,30 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
     }
 }
 
-//extension ReceiptRecognizer where Self: UIViewController & UIImagePickerControllerDelegate & ActivityProgress {
-//    @objc func imagePickerController(_ picker: UIImagePickerController,
-//                               didFinishPickingMediaWithInfo info: [String : Any]) {
-//        imageView?.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-//        dismiss(animated: true, completion: { [weak self] in
-//            self?.doRecoginze(of: self?.imageView)
-//        })
-//    }
-//
-//    @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
-
-extension ReceiptRecognizer where Self: UINavigationControllerDelegate {}
+extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    private var picker: UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.videoQuality = .typeLow
+        picker.allowsEditing = false
+        picker.sourceType = .camera
+        picker.cameraCaptureMode = .photo
+        picker.delegate = self
+        return picker
+    }
+    func startScanning() {
+        present(picker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        imageView?.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        dismiss(animated: true, completion: { [weak self] in
+            self?.doRecoginze(of: self?.imageView)
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 

@@ -10,17 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView?
-    
-    private lazy var picker: UIImagePickerController = {
-        let picker = UIImagePickerController()
-        picker.videoQuality = .typeLow
-        picker.allowsEditing = false
-        picker.sourceType = .camera
-        picker.cameraCaptureMode = .photo
-        picker.delegate = self
-        return picker
-    }()
-    
+
     @IBAction func addReceipt(_ sender: Any) {
         startScanning()
     }
@@ -33,24 +23,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    private func startScanning() {
-        present(picker, animated: true, completion: nil)
-    }
-}
-
-extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        imageView?.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        dismiss(animated: true, completion: { [weak self] in
-            self?.doRecoginze(of: self?.imageView)
-        })
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
     }
 }
 
