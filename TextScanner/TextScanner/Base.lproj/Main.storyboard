@@ -18,16 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tq-iD-7nx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nth-vE-AaT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </imageView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEr-E9-oXt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tq-iD-7nx">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="4tq-iD-7nx" secondAttribute="bottom" id="Hqc-fN-DYP"/>
+                                            <constraint firstItem="4tq-iD-7nx" firstAttribute="leading" secondItem="iEr-E9-oXt" secondAttribute="leading" id="fAR-dR-wS9"/>
+                                            <constraint firstItem="4tq-iD-7nx" firstAttribute="top" secondItem="iEr-E9-oXt" secondAttribute="top" id="qkl-wJ-F4h"/>
+                                            <constraint firstAttribute="trailing" secondItem="4tq-iD-7nx" secondAttribute="trailing" id="s95-8D-QIp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iEr-E9-oXt" secondAttribute="bottom" id="4eY-wL-3n0"/>
+                                    <constraint firstItem="iEr-E9-oXt" firstAttribute="width" secondItem="Nth-vE-AaT" secondAttribute="width" id="CuD-8b-XXA"/>
+                                    <constraint firstItem="iEr-E9-oXt" firstAttribute="height" secondItem="Nth-vE-AaT" secondAttribute="height" id="GJP-Oz-XO8"/>
+                                    <constraint firstAttribute="trailing" secondItem="iEr-E9-oXt" secondAttribute="trailing" id="v8X-Ug-oOg"/>
+                                    <constraint firstItem="iEr-E9-oXt" firstAttribute="top" secondItem="Nth-vE-AaT" secondAttribute="top" id="yzi-Xd-G6v"/>
+                                    <constraint firstItem="iEr-E9-oXt" firstAttribute="leading" secondItem="Nth-vE-AaT" secondAttribute="leading" id="zpg-vq-Lgj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ae6-C1-zWB"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4tq-iD-7nx" secondAttribute="trailing" id="83f-rq-unU"/>
-                            <constraint firstItem="4tq-iD-7nx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R4a-Cl-Cqp"/>
-                            <constraint firstItem="4tq-iD-7nx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wja-cH-BRL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4tq-iD-7nx" secondAttribute="bottom" id="ihF-0x-xF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nth-vE-AaT" secondAttribute="bottom" id="TeI-zm-amU"/>
+                            <constraint firstItem="Nth-vE-AaT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jWq-Z2-4D7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nth-vE-AaT" secondAttribute="trailing" id="rR7-ad-GQU"/>
+                            <constraint firstItem="Nth-vE-AaT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zIa-1r-Hji"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,12 +73,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contentView" destination="iEr-E9-oXt" id="nP5-8u-vwf"/>
                         <outlet property="imageView" destination="4tq-iD-7nx" id="zQ5-8K-mid"/>
+                        <outlet property="scrollView" destination="Nth-vE-AaT" id="eL9-nu-1Dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="-564"/>
+            <point key="canvasLocation" x="852" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pe4-qg-6N8">

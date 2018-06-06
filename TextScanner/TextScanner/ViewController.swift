@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView?
+    @IBOutlet weak var scrollView: UIScrollView?
+    @IBOutlet weak var contentView: UIView?
 
     @IBAction func addReceipt(_ sender: Any) {
         startScanning()
