@@ -13,9 +13,14 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
   - Protobuf (3.5.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
 
 DEPENDENCIES:
   - GoogleMobileVision/TextDetector
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,13 +28,17 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - Protobuf
+    - RxCocoa
+    - RxSwift
 
 SPEC CHECKSUMS:
   GoogleMobileVision: 8c57c6b27b0964506cb7163049e67a38e279ea6f
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: e1d6323f7d43fd7a42ba4a7becbd9da6cdf7b175
+PODFILE CHECKSUM: eb77bbc4d4e2297f5267a6e17e52b89d40fd6d80
 
 COCOAPODS: 1.5.3
