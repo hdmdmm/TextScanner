@@ -19,6 +19,10 @@
 		9745E32620C72910000A283E /* View-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32420C72910000A283E /* View-Layout.swift */; };
 		9745E32920C72A6E000A283E /* RecognizedBlockMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32720C72A6E000A283E /* RecognizedBlockMarkerView.swift */; };
 		9745E32A20C72A6E000A283E /* RecognizedBlockMarkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9745E32820C72A6E000A283E /* RecognizedBlockMarkerModel.swift */; };
+		9778205420C9241400708164 /* ReceiptCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205320C9241400708164 /* ReceiptCaptureViewController.swift */; };
+		9778205620C98E8F00708164 /* TargetOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205520C98E8F00708164 /* TargetOverlayView.swift */; };
+		9778205820C98F1E00708164 /* UIViewController + ImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */; };
+		9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */; };
 		C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		9745E32420C72910000A283E /* View-Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View-Layout.swift"; sourceTree = "<group>"; };
 		9745E32720C72A6E000A283E /* RecognizedBlockMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizedBlockMarkerView.swift; sourceTree = "<group>"; };
 		9745E32820C72A6E000A283E /* RecognizedBlockMarkerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizedBlockMarkerModel.swift; sourceTree = "<group>"; };
+		9778205320C9241400708164 /* ReceiptCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptCaptureViewController.swift; sourceTree = "<group>"; };
+		9778205520C98E8F00708164 /* TargetOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetOverlayView.swift; sourceTree = "<group>"; };
+		9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ImagePickerExtension.swift"; sourceTree = "<group>"; };
+		9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptCapturerDelegate.swift"; sourceTree = "<group>"; };
 		B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,10 @@
 				9745E32820C72A6E000A283E /* RecognizedBlockMarkerModel.swift */,
 				9745E32720C72A6E000A283E /* RecognizedBlockMarkerView.swift */,
 				9745E31C20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift */,
+				9778205320C9241400708164 /* ReceiptCaptureViewController.swift */,
+				9778205520C98E8F00708164 /* TargetOverlayView.swift */,
+				9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */,
+				9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */,
 			);
 			path = OCR;
 			sourceTree = "<group>";
@@ -261,12 +273,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9745E32020C727A4000A283E /* UIViewController-Message.swift in Sources */,
+				9778205620C98E8F00708164 /* TargetOverlayView.swift in Sources */,
+				9778205820C98F1E00708164 /* UIViewController + ImagePickerExtension.swift in Sources */,
 				9745E30C20C71DFA000A283E /* ViewController.swift in Sources */,
 				9745E32A20C72A6E000A283E /* RecognizedBlockMarkerModel.swift in Sources */,
 				9745E30A20C71DFA000A283E /* AppDelegate.swift in Sources */,
+				9778205420C9241400708164 /* ReceiptCaptureViewController.swift in Sources */,
 				9745E32520C72910000A283E /* Rect-extension.swift in Sources */,
 				9745E32920C72A6E000A283E /* RecognizedBlockMarkerView.swift in Sources */,
 				9745E32220C728D2000A283E /* ActivityView.swift in Sources */,
+				9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */,
 				9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */,
 				9745E32620C72910000A283E /* View-Layout.swift in Sources */,
 			);
