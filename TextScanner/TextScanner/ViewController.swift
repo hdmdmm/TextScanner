@@ -14,17 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView?
 
     @IBAction func addReceipt(_ sender: Any) {
-        startScanning()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//        startScanning()   //over Image Picker
+        startCapture()  //over AVFoundation with custom overlays
     }
 }
 
