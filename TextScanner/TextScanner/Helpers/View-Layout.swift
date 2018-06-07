@@ -27,12 +27,12 @@ public func equal<Axis, Anchor>(_ keyPath: KeyPath<UIView, Anchor>,
 }
 
 public func equal<Axis, Anchor>(_ keyPath: KeyPath<UIView, Anchor>,
-                                _ constant: CGFloat = 0) -> Constraint where Anchor: NSLayoutAnchor<Axis> {
+                                constant: CGFloat = 0) -> Constraint where Anchor: NSLayoutAnchor<Axis> {
 	return equal(keyPath, keyPath, constant: constant)
 }
 
 public func equal<Anchor>(_ keyPath: KeyPath<UIView, Anchor>,
-						  _ constant: CGFloat) -> Constraint where Anchor: NSLayoutDimension {
+						  constant: CGFloat) -> Constraint where Anchor: NSLayoutDimension {
 	return { view, _ in
 		view[keyPath: keyPath].constraint(equalToConstant: constant)
 	}
