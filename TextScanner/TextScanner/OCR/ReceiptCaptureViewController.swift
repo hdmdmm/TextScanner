@@ -55,37 +55,36 @@ class ReceiptCaptureController: UIViewController {
     }
     
     private func initializeCaptureSession(on view: UIView) {
-        let cameraInitializer = DispatchWorkItem (block: {
-            
-
-            guard let camera = AVCaptureDevice.default(for: .video),
-                let input = try? AVCaptureDeviceInput(device: camera) else {
+         let cameraInitializer = DispatchWorkItem { [weak self] in
+            guard let sself = self,
+                let camera = AVCaptureDevice.default(for: .video),
+                let input = try? AVCaptureDeviceInput(device: camera),
+                sself.session.canAddInput(input) else {
                 print("Here is the problem. Back Camera device was not initialized as input device")
                 return
             }
-
-            if self.session.canAddInput(input) {
-                self.session.addInput(input)
-                self.imageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-                if self.session.canAddOutput(self.imageOutput) {
-                    self.session.sessionPreset = .photo
-                    self.session.addOutput(self.imageOutput)
-                }
+            sself.session.addInput(input)
+            sself.imageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+            if sself.session.canAddOutput(sself.imageOutput) {
+                sself.session.sessionPreset = .photo
+                sself.session.addOutput(sself.imageOutput)
             }
-        })
-        let previewInitialize = DispatchWorkItem(block: {
+        }
+        let previewInitializer = DispatchWorkItem { [weak self] in
+            guard let sself = self else { return }
             // preview initializer
-            let previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+            let previewLayer = AVCaptureVideoPreviewLayer(session: sself.session)
             previewLayer.videoGravity = .resizeAspectFill
             previewLayer.connection?.videoOrientation = .portrait
             view.layer.addSublayer(previewLayer)
-            previewLayer.frame = self.view.layer.frame
-        })
-        let startSession = DispatchWorkItem(block: {
-            self.session.startRunning()
-        })
+            previewLayer.frame = sself.view.layer.frame
+        }
+        let startSession = DispatchWorkItem { [weak self] in
+            guard let sself = self else { return }
+            sself.session.startRunning()
+        }
         DispatchQueue.main.async(execute: cameraInitializer)
-        DispatchQueue.main.async(execute: previewInitialize)
+        DispatchQueue.main.async(execute: previewInitializer)
         DispatchQueue.main.async(execute: startSession)
     }
 
