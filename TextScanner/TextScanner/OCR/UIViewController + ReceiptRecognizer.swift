@@ -13,6 +13,7 @@ protocol ReceiptRecognizer {
     var imageView: UIImageView? {get set}
     var scrollView: UIScrollView? {get set}
     var contentView: UIView? {get set}
+    func doRecoginze(of imageView: UIImageView?)
 }
 
 extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
@@ -87,7 +88,6 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
     }
 
     private func blockIntoLines(_ block: GMVTextBlockFeature, _ coefficient: CGFloat) -> [RecognizedBlockMarkerModel]?  {
-        
         let models = block.lines.compactMap { textLine in
             return RecognizedBlockMarkerModel(bounds: textLine.bounds.multiply(coefficient), value: textLine.value)
         }
@@ -108,7 +108,10 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
     }
 
     private func fixOrientation(_ img: UIImage) -> UIImage? { // can be used for images that is rotated on 90 degree
-        if img.imageOrientation == .up { return img }
+        print(img.imageOrientation.rawValue)
+        if img.imageOrientation == .up {
+            return img
+        }
         UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale)
         let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
         img.draw(in: rect)
@@ -145,49 +148,23 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
     }
 }
 
-extension ViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return contentView
+extension UIViewController: UIScrollViewDelegate {
+    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        guard let controller = self as? ReceiptRecognizer else {
+            return nil
+        }
+        return controller.contentView
     }
 
-    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
-        guard let imageSize = imageView?.image?.size else {return}
+    func updateMaxZoomScaleForSize(_ size: CGSize) {
+        guard let controller = self as? ReceiptRecognizer,
+            let imageSize = controller.imageView?.image?.size else {return}
         let widthScale = imageSize.width / size.width
         let heightScale = imageSize.height / size.height
         let maxScale = max(widthScale, heightScale)
-        scrollView?.minimumZoomScale = 1.0
-        scrollView?.maximumZoomScale = maxScale
-        scrollView?.zoomScale = 1.0
+        controller.scrollView?.minimumZoomScale = 1.0
+        controller.scrollView?.maximumZoomScale = maxScale
+        controller.scrollView?.zoomScale = 1.0
     }
 }
 
-extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    fileprivate var picker: UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.videoQuality = .typeLow
-        picker.allowsEditing = false
-        picker.sourceType = .camera
-        picker.cameraCaptureMode = .photo
-        picker.delegate = self
-        return picker
-    }
-
-    func startScanning() {
-        present(picker, animated: true, completion: nil)
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        imageView?.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        dismiss(animated: true, completion: { [weak self] in
-            if let size = self?.contentView?.bounds.size {
-                self?.updateMinZoomScaleForSize(size)
-            }
-            self?.doRecoginze(of: self?.imageView)
-        })
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-}
