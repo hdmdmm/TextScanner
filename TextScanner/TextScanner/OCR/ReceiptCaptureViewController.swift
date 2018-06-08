@@ -24,7 +24,8 @@ class ReceiptCaptureController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(exit))
-        navigationItem.title = "Scan receipt"
+        navigationItem.titleView = makeTitleView("Scan reciept")
+        navigationController?.navigationBar.tintColor = .black
 
         // Initializing Capture Session
         initializeCaptureSession(on: self.view)
@@ -41,7 +42,9 @@ class ReceiptCaptureController: UIViewController {
         //add button on bottom of screen
         let buttonInitializer = DispatchWorkItem  {
             let button = UIButton(frame: CGRect.zero)
-            button.setTitle("CAPTURE", for: .normal)
+            let attTitle = NSAttributedString(string: "CAPTURE", attributes: [.font : UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.thin),
+                                                                              .foregroundColor : UIColor.white])
+            button.setAttributedTitle(attTitle, for: .normal)
             button.layer.masksToBounds = true
             button.layer.cornerRadius = 10.0
             button.backgroundColor = .black
@@ -86,6 +89,16 @@ class ReceiptCaptureController: UIViewController {
         DispatchQueue.main.async(execute: cameraInitializer)
         DispatchQueue.main.async(execute: previewInitializer)
         DispatchQueue.main.async(execute: startSession)
+    }
+    
+    private func makeTitleView(_ title: String) -> UILabel {
+        let label = UILabel()
+        let font = UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.light)
+        let attTitle = NSMutableAttributedString(string: title, attributes: [.foregroundColor: UIColor.black,
+                                                                             .font: font])
+        
+        label.attributedText = attTitle
+        return label
     }
 
     @objc private func exit() {
