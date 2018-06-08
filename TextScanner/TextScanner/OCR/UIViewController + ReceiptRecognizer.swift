@@ -164,7 +164,7 @@ extension UIViewController: UIScrollViewDelegate {
         let maxScale = max(widthScale, heightScale)
         controller.scrollView?.minimumZoomScale = 1.0
         controller.scrollView?.maximumZoomScale = maxScale
-        controller.scrollView?.zoomScale = 1.0
+        controller.scrollView?.zoomScale = 1.3
     }
 }
 
