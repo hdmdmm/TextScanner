@@ -23,6 +23,7 @@
 		9778205620C98E8F00708164 /* TargetOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205520C98E8F00708164 /* TargetOverlayView.swift */; };
 		9778205820C98F1E00708164 /* UIViewController + ImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */; };
 		9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */; };
+		9778205C20CA24C400708164 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205B20CA24C400708164 /* ViewModel.swift */; };
 		C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		9778205520C98E8F00708164 /* TargetOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetOverlayView.swift; sourceTree = "<group>"; };
 		9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ImagePickerExtension.swift"; sourceTree = "<group>"; };
 		9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptCapturerDelegate.swift"; sourceTree = "<group>"; };
+		9778205B20CA24C400708164 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				9745E31E20C724C4000A283E /* Helpers */,
 				9745E31B20C721A1000A283E /* OCR */,
 				9745E30920C71DFA000A283E /* AppDelegate.swift */,
+				9778205B20CA24C400708164 /* ViewModel.swift */,
 				9745E30B20C71DFA000A283E /* ViewController.swift */,
 				9745E30D20C71DFA000A283E /* Main.storyboard */,
 				9745E31020C71DFB000A283E /* Assets.xcassets */,
@@ -286,6 +289,7 @@
 				9745E32520C72910000A283E /* Rect-extension.swift in Sources */,
 				9745E32920C72A6E000A283E /* RecognizedBlockMarkerView.swift in Sources */,
 				9745E32220C728D2000A283E /* ActivityView.swift in Sources */,
+				9778205C20CA24C400708164 /* ViewModel.swift in Sources */,
 				9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */,
 				9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */,
 				9745E32620C72910000A283E /* View-Layout.swift in Sources */,
