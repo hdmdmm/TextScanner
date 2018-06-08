@@ -35,7 +35,10 @@ class WizardDialogueView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        backButton.addTarget(self, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
+        backButton.addTarget(self,
+                             action:#selector(backButtonActivated(_:)), for: .touchUpInside)
+        nextButton.addTarget(self,
+                             action: #selector(nextButtonActivated(_:)), for: .touchUpInside)
     }
     
     func setup(model: ViewModel) {
@@ -45,5 +48,19 @@ class WizardDialogueView: UIView {
         nextButton.setTitle(model.isNextValue ? "Next" : "Finish", for: .normal)
         progressIndicator.index = model.currentIndex
         self.model = model
+    }
+    
+    @objc private func backButtonActivated(_ sender: UIButton) {
+        let valueModel = model?.previousValue()
+        title.text = valueModel?.title
+        value.text = valueModel?.value
+        guard let isBackValue = model?.isBackValue else {
+            return
+        }
+        backButton.isHidden = !isBackValue
+    }
+    
+    @objc private func nextButtonActivated(_ sender: UIButton) {
+        
     }
 }
