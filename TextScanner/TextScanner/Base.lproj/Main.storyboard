@@ -10,22 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Wizard View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WizardViewController" id="BYZ-38-t0r" customClass="WizardViewController" customModule="TextScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nth-vE-AaT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEr-E9-oXt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tq-iD-7nx">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,10 +49,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ae6-C1-zWB"/>
                                 </connections>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhH-S7-LNA" customClass="WizardDialogueView" customModule="TextScanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="150" id="WdV-bW-dh9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XhH-S7-LNA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PyN-cD-rfo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nth-vE-AaT" secondAttribute="bottom" id="TeI-zm-amU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XhH-S7-LNA" secondAttribute="bottom" id="bgj-6e-Apn"/>
+                            <constraint firstItem="XhH-S7-LNA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gEC-RX-n0B"/>
                             <constraint firstItem="Nth-vE-AaT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jWq-Z2-4D7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nth-vE-AaT" secondAttribute="trailing" id="rR7-ad-GQU"/>
                             <constraint firstItem="Nth-vE-AaT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zIa-1r-Hji"/>
@@ -74,13 +84,41 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentView" destination="iEr-E9-oXt" id="nP5-8u-vwf"/>
+                        <outlet property="dialogueView" destination="XhH-S7-LNA" id="k9L-zw-kEh"/>
                         <outlet property="imageView" destination="4tq-iD-7nx" id="zQ5-8K-mid"/>
                         <outlet property="scrollView" destination="Nth-vE-AaT" id="eL9-nu-1Dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="853.60000000000002" y="-1245.4272863568217"/>
+        </scene>
+        <!--Fuel Entry View Controller-->
+        <scene sceneID="EzU-Kz-hZS">
+            <objects>
+                <viewController id="3ba-CY-641" customClass="FuelEntryViewController" customModule="TextScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfg-ka-a21">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="G7r-O0-9zB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nNm-4w-b0E">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="773-gK-0c4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1eX-hB-3A3">
+                                <rect key="frame" x="275" y="7" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Receipt"/>
+                                <connections>
+                                    <action selector="addReceiptActivated:" destination="3ba-CY-641" eventType="touchUpInside" id="NaH-aV-A7l"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8p-Yy-Shu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pe4-qg-6N8">
@@ -93,7 +131,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Cof-gY-OX4"/>
+                        <segue destination="3ba-CY-641" kind="relationship" relationship="rootViewController" id="ilE-bc-fmK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLe-MQ-pdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
