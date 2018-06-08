@@ -9,6 +9,16 @@
 import UIKit
 
 extension UIViewController: ReceiptCaptureControllerDelegate {
+    func canceled(_ controller: ReceiptCaptureController?) {
+        guard let presenter = navigationController?.presentingViewController else {
+            self.dismiss(animated: false, completion: nil)
+            return
+        }
+        presenter
+            .presentingViewController?
+            .dismiss(animated: false, completion: nil)
+    }
+    
     fileprivate var capture: ReceiptCaptureController {
         let captureController = ReceiptCaptureController()
         captureController.receiptCaptureDelegate = self

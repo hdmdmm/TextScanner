@@ -12,6 +12,7 @@ import AVFoundation
 protocol ReceiptCaptureControllerDelegate: class {
     func handledCaptureResult(_ controller: ReceiptCaptureController?, image: UIImage)
     func handledError(_ controller: ReceiptCaptureController?, error: Error?)
+    func canceled(_ controller: ReceiptCaptureController?)
 }
 
 class ReceiptCaptureController: UIViewController {
@@ -102,7 +103,7 @@ class ReceiptCaptureController: UIViewController {
     }
 
     @objc private func exit() {
-        dismiss(animated: false, completion: nil)
+        canceled(self)
     }
 
     @objc private func didCaptureActivated() {

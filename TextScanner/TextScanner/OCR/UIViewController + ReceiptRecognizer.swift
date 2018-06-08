@@ -16,6 +16,10 @@ protocol ReceiptRecognizer {
     func doRecoginze(of imageView: UIImageView?)
 }
 
+protocol ReceiptRecognizerHandler {
+    func recognitionCompleted()
+}
+
 extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
     var markersViewTag: Int {
         return 4000
@@ -68,6 +72,7 @@ extension ReceiptRecognizer where Self: UIViewController & ActivityProgress {
         let completion = DispatchWorkItem(block: { [weak self] in
             self?.markersView?.isHidden = false
             self?.hideActivity()
+            (self as? ReceiptRecognizerHandler)?.recognitionCompleted()
         })
         DispatchQueue.main.async(execute: cleanupMarkersView)
         DispatchQueue.main.async(execute: updateMarkersView)
