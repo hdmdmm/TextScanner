@@ -10,12 +10,18 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol WizardDialogueHandler {
+    func handledFinisheEvent(view: WizardDialogueView)
+}
+
 class WizardDialogueView: UIView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var value: UITextView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var progressIndicator: WizardProgresIndicatorView!
+
+    var delegate: WizardDialogueHandler?
 
     private var model: ViewModel?
     private var contentView: UIView?
@@ -42,25 +48,50 @@ class WizardDialogueView: UIView {
     }
     
     func setup(model: ViewModel) {
-        title.text = model.value()?.title
-        value.text = model.value()?.value
-        backButton.isHidden = !model.isBackValue
-        nextButton.setTitle(model.isNextValue ? "Next" : "Finish", for: .normal)
+        setupValues(model.value())
+        setupButtons()
         progressIndicator.index = model.currentIndex
         self.model = model
     }
     
-    @objc private func backButtonActivated(_ sender: UIButton) {
-        let valueModel = model?.previousValue()
+    private func setupValues(_ valueModel: ValueModel?) {
         title.text = valueModel?.title
         value.text = valueModel?.value
-        guard let isBackValue = model?.isBackValue else {
-            return
-        }
-        backButton.isHidden = !isBackValue
+    }
+    
+    @objc private func backButtonActivated(_ sender: UIButton) {
+        setupValues(model?.previousValue())
+        setupButtons()
     }
     
     @objc private func nextButtonActivated(_ sender: UIButton) {
-        
+        setupValues(model?.nextValue())
+        setupButtons()
+    }
+    
+    @objc private func finishButtonActivated(_ sender: UIButton) {
+        delegate?.handledFinisheEvent(view: self)
+    }
+    
+    private func setupButtons() {
+        guard let model = model else { return }
+        backButton.isHidden = !model.isBackValue
+        if model.isNextValue {
+            setupNextButton()
+        } else {
+            setupFinishButton()
+        }
+    }
+    
+    private func setupNextButton() {
+        nextButton.removeTarget(self, action: nil, for: .allEvents)
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.addTarget(self, action: #selector(nextButtonActivated(_:)), for: .touchUpInside)
+    }
+    
+    private func setupFinishButton() {
+        nextButton.removeTarget(self, action: nil, for: .allEvents)
+        nextButton.setTitle("Finish", for: .normal)
+        nextButton.addTarget(self, action: #selector(nextButtonActivated(_:)), for: .touchUpInside)
     }
 }
