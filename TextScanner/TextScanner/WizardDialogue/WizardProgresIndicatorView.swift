@@ -12,24 +12,23 @@ import UIKit
 class WizardProgresIndicatorView: UIView {
 
     @IBInspectable
-    var index: Int = 2 {
+    var index: Int = 0 {
         didSet {
-            if index < dots {
-                setNeedsDisplay()
-                return
+            if index >= dots {
+                index = dots-1
             }
-            index = dots-1
+            setNeedsDisplay()
         }
     }
 
     @IBInspectable
-    var passColor: UIColor = .red
+    var passColor: UIColor = .green
 
     @IBInspectable
-    var currentColor: UIColor = .green
+    var currentColor: UIColor = .darkGray
     
     @IBInspectable
-    var defaultColor: UIColor = .darkGray
+    var defaultColor: UIColor = .gray
     
     @IBInspectable
     var dotRadius: CGFloat = 5.0 {
@@ -46,6 +45,7 @@ class WizardProgresIndicatorView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        self.layer.sublayers?.removeAll()
         let center = CGPoint(x: rect.width/2, y: rect.height/2)
         let begin = dots % 2 == 0
             ? CGPoint(x: center.x - dotRadius/2 * (CGFloat(3 * dots) - 2) - dotRadius/2, y: rect.height/2 - dotRadius)

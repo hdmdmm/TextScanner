@@ -106,7 +106,7 @@
                             <color key="value" red="0.21791773908341894" green="0.86407439720812185" blue="0.26438811546891205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="index">
-                            <integer key="value" value="2"/>
+                            <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
