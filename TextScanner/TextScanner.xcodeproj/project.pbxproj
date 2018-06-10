@@ -28,7 +28,7 @@
 		9778205620C98E8F00708164 /* TargetOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205520C98E8F00708164 /* TargetOverlayView.swift */; };
 		9778205820C98F1E00708164 /* UIViewController + ImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */; };
 		9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */; };
-		9778205C20CA24C400708164 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205B20CA24C400708164 /* ViewModel.swift */; };
+		9778205C20CA24C400708164 /* WizardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205B20CA24C400708164 /* WizardViewModel.swift */; };
 		C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,7 @@
 		9778205520C98E8F00708164 /* TargetOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetOverlayView.swift; sourceTree = "<group>"; };
 		9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ImagePickerExtension.swift"; sourceTree = "<group>"; };
 		9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptCapturerDelegate.swift"; sourceTree = "<group>"; };
-		9778205B20CA24C400708164 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9778205B20CA24C400708164 /* WizardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewModel.swift; sourceTree = "<group>"; };
 		B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,7 +86,7 @@
 		9730794520CB222E0052BFAC /* WizardDialogue */ = {
 			isa = PBXGroup;
 			children = (
-				9778205B20CA24C400708164 /* ViewModel.swift */,
+				9778205B20CA24C400708164 /* WizardViewModel.swift */,
 				9718E9BD20CAAF72000A2F08 /* WizardDialogueView.swift */,
 				9718E9BF20CAB4FF000A2F08 /* WizardDialogueView.xib */,
 				9718E9C320CACBD0000A2F08 /* WizardProgresIndicatorView.swift */,
@@ -316,7 +316,7 @@
 				9745E32520C72910000A283E /* Rect-extension.swift in Sources */,
 				9745E32920C72A6E000A283E /* RecognizedBlockMarkerView.swift in Sources */,
 				9745E32220C728D2000A283E /* ActivityView.swift in Sources */,
-				9778205C20CA24C400708164 /* ViewModel.swift in Sources */,
+				9778205C20CA24C400708164 /* WizardViewModel.swift in Sources */,
 				9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */,
 				9718E9C420CACBD0000A2F08 /* WizardProgresIndicatorView.swift in Sources */,
 				9745E31D20C721FA000A283E /* UIViewController + ReceiptRecognizer.swift in Sources */,

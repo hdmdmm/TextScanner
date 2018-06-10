@@ -21,9 +21,9 @@ class WizardDialogueView: UIView {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var progressIndicator: WizardProgresIndicatorView!
 
-    var delegate: WizardDialogueHandler?
+    var disposeBag = DisposeBag()
 
-    private var model: ViewModel?
+    private var model: WizardViewModel?
     private var contentView: UIView?
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -47,11 +47,16 @@ class WizardDialogueView: UIView {
                              action: #selector(nextButtonActivated(_:)), for: .touchUpInside)
     }
     
-    func setup(model: ViewModel) {
-        setupValues(model.value())
+    func setup(model: WizardViewModel?) {
+        setupValues(model?.value())
         setupButtons()
-        progressIndicator.index = model.currentIndex
         self.model = model
+
+        model?.currentIndex
+            .asObservable()
+            .bind(onNext: { index in
+                self.progressIndicator.index = index
+            }).disposed(by: disposeBag)
     }
     
     private func setupValues(_ valueModel: ValueModel?) {
@@ -70,7 +75,7 @@ class WizardDialogueView: UIView {
     }
     
     @objc private func finishButtonActivated(_ sender: UIButton) {
-        delegate?.handledFinisheEvent(view: self)
+        model?.isFinished.value = true
     }
     
     private func setupButtons() {
@@ -92,6 +97,6 @@ class WizardDialogueView: UIView {
     private func setupFinishButton() {
         nextButton.removeTarget(self, action: nil, for: .allEvents)
         nextButton.setTitle("Finish", for: .normal)
-        nextButton.addTarget(self, action: #selector(nextButtonActivated(_:)), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(finishButtonActivated(_:)), for: .touchUpInside)
     }
 }

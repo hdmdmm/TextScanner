@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class WizardViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView?
@@ -16,18 +18,35 @@ class WizardViewController: UIViewController {
     @IBOutlet weak var dialogueView: WizardDialogueView!
 
     // model can be injected
-    var model = ViewModel()
+    var model: WizardViewModel?
+    
+    private var disposalBag = DisposeBag()
+    
+    func inject(model: WizardViewModel?) {
+        self.model = model
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(exit))
-        navigationItem.titleView = makeTitleView(model.title)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                           target: self,
+                                                           action: #selector(exit))
+        navigationItem.titleView = makeTitleView(model?.title)
         navigationController?.navigationBar.tintColor = .black
 
         DispatchQueue.main.async {
             self.startCapture()  //over AVFoundation with custom overlays
 //            self.startScanning() //over Image Picker
         }
+
+        model?.isFinished
+            .asObservable()
+            .subscribe(onNext: {
+                if $0 {
+                    self.exit()
+                }
+            })
+            .disposed(by: disposalBag)
     }
     
     private func makeTitleView(_ title: String?) -> UILabel? {
