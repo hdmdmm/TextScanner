@@ -64,6 +64,15 @@ class WizardDialogueView: UIView {
                 guard let index = model?.currentIndex else { return }
                 self.value.text = values[index.value].value
         }).disposed(by: disposeBag)
+        
+        value.rx
+            .didEndEditing
+            .map { self.value }
+            .bind { textView in
+                guard let index = model?.currentIndex.value else { return }
+                self.model?.values.value[index].value = textView?.text
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setupValues(_ valueModel: ValueModel?) {

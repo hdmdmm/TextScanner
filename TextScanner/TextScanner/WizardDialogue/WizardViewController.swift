@@ -24,6 +24,8 @@ class WizardViewController: UIViewController {
     
     func inject(model: WizardViewModel?) {
         self.model = model
+        self.model?.isFinished.value = false
+        self.model?.currentIndex.value = 0
     }
     
     override func viewDidLoad() {

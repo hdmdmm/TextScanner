@@ -29,8 +29,7 @@ class FuelEntryViewController: UIViewController {
     }
 
     @IBAction func addReceiptActivated(_ sender: Any) {
-        let vc = WizardViewController(nibName: "WizardViewController", bundle: nil)
-        wizardViewModel.isFinished.value = false
+        let vc = WizardViewController()
         vc.inject(model: wizardViewModel)
         present(UINavigationController(rootViewController: vc), animated: false, completion: nil)
     }
