@@ -91,16 +91,6 @@ class ReceiptCaptureController: UIViewController {
         DispatchQueue.main.async(execute: previewInitializer)
         DispatchQueue.main.async(execute: startSession)
     }
-    
-    private func makeTitleView(_ title: String) -> UILabel {
-        let label = UILabel()
-        let font = UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.light)
-        let attTitle = NSMutableAttributedString(string: title, attributes: [.foregroundColor: UIColor.black,
-                                                                             .font: font])
-        
-        label.attributedText = attTitle
-        return label
-    }
 
     @objc private func exit() {
         canceled(self)

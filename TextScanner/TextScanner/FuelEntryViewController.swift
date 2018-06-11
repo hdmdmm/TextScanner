@@ -16,6 +16,12 @@ class FuelEntryViewController: UIViewController {
                                                    ValueModel(title: "Date", value: nil),
                                                    ValueModel(title: "Address", value: nil)] )
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.titleView = makeTitleView("Fuel Entry")
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Display Data from wizardViewModel

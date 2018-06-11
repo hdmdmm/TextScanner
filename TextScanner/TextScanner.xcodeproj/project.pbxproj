@@ -29,6 +29,7 @@
 		9778205820C98F1E00708164 /* UIViewController + ImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */; };
 		9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */; };
 		9778205C20CA24C400708164 /* WizardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205B20CA24C400708164 /* WizardViewModel.swift */; };
+		97885E0420CE892F009857AE /* UIViewController-titleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97885E0320CE892F009857AE /* UIViewController-titleView.swift */; };
 		C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		9778205720C98F1E00708164 /* UIViewController + ImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ImagePickerExtension.swift"; sourceTree = "<group>"; };
 		9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptCapturerDelegate.swift"; sourceTree = "<group>"; };
 		9778205B20CA24C400708164 /* WizardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewModel.swift; sourceTree = "<group>"; };
+		97885E0320CE892F009857AE /* UIViewController-titleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController-titleView.swift"; path = "TextScanner/Helpers/UIViewController-titleView.swift"; sourceTree = SOURCE_ROOT; };
 		B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				9745E32320C7290F000A283E /* Rect-extension.swift */,
 				9745E32420C72910000A283E /* View-Layout.swift */,
 				9745E32120C728D2000A283E /* ActivityView.swift */,
+				97885E0320CE892F009857AE /* UIViewController-titleView.swift */,
 				9745E31F20C727A4000A283E /* UIViewController-Message.swift */,
 			);
 			path = Helpers;
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9718E9BE20CAAF72000A2F08 /* WizardDialogueView.swift in Sources */,
+				97885E0420CE892F009857AE /* UIViewController-titleView.swift in Sources */,
 				9745E32020C727A4000A283E /* UIViewController-Message.swift in Sources */,
 				9778205620C98E8F00708164 /* TargetOverlayView.swift in Sources */,
 				9718E9C620CAD52C000A2F08 /* FuelEntryViewController.swift in Sources */,
