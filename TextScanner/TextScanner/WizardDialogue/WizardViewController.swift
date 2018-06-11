@@ -48,16 +48,11 @@ class WizardViewController: UIViewController {
             })
             .disposed(by: disposalBag)
     }
-    
+
     @objc func exit() {
         dismiss(animated: false, completion: nil)
     }
-    
-    @IBAction func addReceipt(_ sender: Any) {
-//        startScanning()   //over Image Picker
-        startCapture()  //over AVFoundation with custom overlays
-    }
-    
+
     func showUpWizard() {
         dialogueView.setup(model: model)
         dialogueView.isHidden = false

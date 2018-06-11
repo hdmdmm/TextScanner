@@ -30,6 +30,7 @@
 		9778205A20C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */; };
 		9778205C20CA24C400708164 /* WizardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778205B20CA24C400708164 /* WizardViewModel.swift */; };
 		97885E0420CE892F009857AE /* UIViewController-titleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97885E0320CE892F009857AE /* UIViewController-titleView.swift */; };
+		97885E0620CE8C5D009857AE /* WizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97885E0520CE8C5D009857AE /* WizardViewController.xib */; };
 		C9CAFD6C3B96F74C53DD810B /* Pods_TextScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		9778205920C98F8B00708164 /* UIViewController + ReceiptCapturerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ReceiptCapturerDelegate.swift"; sourceTree = "<group>"; };
 		9778205B20CA24C400708164 /* WizardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewModel.swift; sourceTree = "<group>"; };
 		97885E0320CE892F009857AE /* UIViewController-titleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController-titleView.swift"; path = "TextScanner/Helpers/UIViewController-titleView.swift"; sourceTree = SOURCE_ROOT; };
+		97885E0520CE8C5D009857AE /* WizardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WizardViewController.xib; sourceTree = "<group>"; };
 		B065DDCEE8D3407F32BA4EC8 /* Pods_TextScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				9718E9BF20CAB4FF000A2F08 /* WizardDialogueView.xib */,
 				9718E9C320CACBD0000A2F08 /* WizardProgresIndicatorView.swift */,
 				9745E30B20C71DFA000A283E /* WizardViewController.swift */,
+				97885E0520CE8C5D009857AE /* WizardViewController.xib */,
 			);
 			path = WizardDialogue;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				9745E31420C71DFB000A283E /* LaunchScreen.storyboard in Resources */,
 				9718E9C020CAB4FF000A2F08 /* WizardDialogueView.xib in Resources */,
+				97885E0620CE8C5D009857AE /* WizardViewController.xib in Resources */,
 				9745E31120C71DFB000A283E /* Assets.xcassets in Resources */,
 				9745E30F20C71DFA000A283E /* Main.storyboard in Resources */,
 			);

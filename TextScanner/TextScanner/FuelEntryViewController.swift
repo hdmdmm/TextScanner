@@ -25,12 +25,12 @@ class FuelEntryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Display Data from wizardViewModel
-        print(wizardViewModel.values ?? "not initialized wizardViewModel")
+        print(wizardViewModel.values.value)
     }
 
     @IBAction func addReceiptActivated(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WizardViewController")
-        (vc as? WizardViewController)?.inject(model: wizardViewModel)
+        let vc = WizardViewController(nibName: "WizardViewController", bundle: nil)
+        vc.inject(model: wizardViewModel)
         present(UINavigationController(rootViewController: vc), animated: false, completion: nil)
     }
 }
