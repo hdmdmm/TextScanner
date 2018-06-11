@@ -34,17 +34,16 @@ class WizardViewController: UIViewController {
         navigationItem.titleView = makeTitleView(model?.title)
         navigationController?.navigationBar.tintColor = .black
 
-        DispatchQueue.main.async {
-            self.startCapture()  //over AVFoundation with custom overlays
-//            self.startScanning() //over Image Picker
-        }
-
         model?.isFinished
-            .asObservable()
-            .subscribe(onNext: {
-                if $0 {
-                    self.exit()
+            .asObservable().map { [weak self] isFinished -> (Bool) in
+                if !isFinished {
+                    self?.startCapture()  //over AVFoundation with custom overlays
+//                    self?.startScanning() //over Image Picker
                 }
+                return isFinished
+            }
+            .subscribe(onNext: { [weak self] in
+                if $0 { self?.exit() }
             })
             .disposed(by: disposalBag)
     }

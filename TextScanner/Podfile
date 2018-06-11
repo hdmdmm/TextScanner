@@ -7,5 +7,6 @@ target 'TextScanner' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'GoogleMobileVision/TextDetector'
+    pod 'IQKeyboardManagerSwift'
 #    pod 'TesseractOCRiOS'
 end
