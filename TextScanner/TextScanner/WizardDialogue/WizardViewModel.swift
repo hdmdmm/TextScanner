@@ -15,7 +15,7 @@ struct ValueModel {
 }
 
 class WizardViewModel {
-    var values: [ValueModel]?
+    let values: Variable<[ValueModel]>!
     var title: String?
     var currentIndex = Variable<Int>(0)
     var isFinished = Variable<Bool>(false)
@@ -24,12 +24,12 @@ class WizardViewModel {
     ///
     init(title: String?, values: [ValueModel]) {
         self.title = title
-        self.values = values
+        self.values = Variable<[ValueModel]>(values)
     }
     
     var isNextValue: Bool {
         guard let values = values else {return false}
-        return currentIndex.value + 1 < values.endIndex
+        return currentIndex.value + 1 < values.value.endIndex
     }
     
     var isBackValue: Bool {
@@ -38,7 +38,7 @@ class WizardViewModel {
     
     func value() -> ValueModel? {
         guard let values = values else { return nil }
-        return values[currentIndex.value]
+        return values.value[currentIndex.value]
     }
     
     func nextValue() -> ValueModel? {
@@ -46,7 +46,7 @@ class WizardViewModel {
             return nil
         }
         currentIndex.value += 1
-        return values?[currentIndex.value]
+        return values.value[currentIndex.value]
     }
     
     func previousValue() -> ValueModel? {
@@ -54,6 +54,6 @@ class WizardViewModel {
             return nil
         }
         currentIndex.value -= 1
-        return values?[currentIndex.value]
+        return values.value[currentIndex.value]
     }
 }

@@ -49,17 +49,6 @@ class WizardViewController: UIViewController {
             .disposed(by: disposalBag)
     }
     
-    private func makeTitleView(_ title: String?) -> UILabel? {
-        guard let title = title else { return nil}
-        let label = UILabel()
-        let font = UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.light)
-        let attTitle = NSMutableAttributedString(string: title, attributes: [.foregroundColor: UIColor.black,
-                                                                             .font: font])
-
-        label.attributedText = attTitle
-        return label
-    }
-    
     @objc func exit() {
         dismiss(animated: false, completion: nil)
     }
@@ -87,16 +76,17 @@ extension WizardViewController: ReceiptRecognizerHandler {
 }
 
 extension WizardViewController: RecognizedMarkerHandlerEvent {
-    func tapEventHandled(view: RecognizedBlockMarkerView,
-                         model: RecognizedBlockMarkerModel?) {
-        guard let model = model else {
+
+    func tapEventHandled(view: RecognizedBlockMarkerView, model: RecognizedBlockMarkerModel?) {
+        guard let recognizerModel = model,
+            let wizardModel = self.model else {
             print("Recognized block model was not initialized")
             return
         }
-        showMessage("Tapped text:", model.value)
+        wizardModel.values.value[wizardModel.currentIndex.value].value = recognizerModel.value
     }
+
 }
 
 extension WizardViewController: ReceiptRecognizer{}
-extension WizardViewController: Message{}
 extension WizardViewController: ActivityProgress{}

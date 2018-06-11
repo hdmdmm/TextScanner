@@ -57,6 +57,13 @@ class WizardDialogueView: UIView {
             .bind(onNext: { index in
                 self.progressIndicator.index = index
             }).disposed(by: disposeBag)
+        
+        model?.values
+            .asObservable()
+            .bind(onNext: { values in
+                guard let index = model?.currentIndex else { return }
+                self.value.text = values[index.value].value
+        }).disposed(by: disposeBag)
     }
     
     private func setupValues(_ valueModel: ValueModel?) {
